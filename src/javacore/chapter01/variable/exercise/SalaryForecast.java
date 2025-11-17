@@ -25,7 +25,8 @@ public class SalaryForecast {
         float HeuresJour = 7.7F;
         float HeuresSemaine = 38.5F;
 
-        // Salaires brut
+
+        // Salaires bruts
 
         float salaireBrutJournalier = TxHoraire * HeuresJour;
         System.out.println("Le salaire brut journalier s'élève à " + salaireBrutJournalier);
@@ -39,6 +40,23 @@ public class SalaryForecast {
         float salaireBrutAnnuel = salaireBrutMensuel * 12;
         System.out.println("Le salaire brut annuel s'élève à " + salaireBrutAnnuel);
 
-        // Salaires net imposables
+
+        // Salaires nets imposables
+
+        float salaireNetImposableMensuel = salaireBrutMensuel - (salaireBrutMensuel * 25 / 100);
+        System.out.println("Le salaire net imposable mensuel s'élève à : " + salaireNetImposableMensuel);
+
+        float salaireNetImposableAnnuel = salaireBrutAnnuel * 0.75F;
+        System.out.println("Le salaire net imposable annuel s'élève à : " + salaireNetImposableAnnuel);
+
+
+        // Salaires nets après impôt
+
+        float salaireNetMensuel = salaireNetImposableMensuel * 0.89F;
+        System.out.println("Le salaire net  mensuel s'élève à : " + salaireNetMensuel);
+
+        float salaireNetAnnuel = salaireNetImposableAnnuel * 0.89F;
+        System.out.println("Le salaire net  annuel s'élève à : " + salaireNetAnnuel);
+
     }
 }
