@@ -20,8 +20,11 @@ public class FrenchRevenueTaxCalculator {
             System.out.println("Votre impôt s'élève à 0€");
         }
         else if (salary < 28797){
-            salary = salary - (salary * 11 / 100);
-            System.out.println("Votre salaire après impôt s'élève à : " + salary + "€");
+            System.out.println("Votre salaire avant impôt s'élève à : " + salary + "€");
+            double salaryNet = salary - (salary * 11 / 100);
+            System.out.println("Le montant de votre salaire net après impôt est de " + salaryNet + "€.");
+            double taxe = salary - salaryNet;
+            System.out.println("L'impôt qui sera prélevé est de " + taxe + "€");
         }
     }
 }
