@@ -5,7 +5,7 @@ public class CoinChangerV1 {
     public static void main(String[] args){
 
         // 18 - 52 - 76 - 160 - 384
-        int totalBill = 384;
+        int totalBill = 384 ;
         int amountPaid = 90;
 
         int change = totalBill - amountPaid;

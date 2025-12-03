@@ -2,7 +2,7 @@ package javacore.chapter02.condition.exercise;
 
 public class FrenchRevenueTaxCalculator {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         // Rappel :
         // 3 types de salaires :
@@ -30,41 +30,55 @@ public class FrenchRevenueTaxCalculator {
         // 195000
         double salary = 195000;
         double taxe = 0;
-        double netSalaryAfterTax = salary - taxe;
 
-        if (salary < 11294) {
+        double netSalaryAfterTax = salary - taxe;
+        double salaryTax45Bracket5 = 0;
+        double salaryTax41Bracket4 = 0;
+        double salaryTax30Bracket3 = 0;
+        double salaryTax11Bracket2;
+
+        if (salary > 177106) {
+            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
+
+            salaryTax45Bracket5 = salary - 177106;
+            netSalaryAfterTax = salary - (salaryTax45Bracket5 * 45 / 100);
+
+            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
+
+            taxe = salary - netSalaryAfterTax;
+
+            System.out.println("Le montant de votre impôt est de " + taxe + "€");
+
+        } else if (salary >= 82342) {
+            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
+            salaryTax41Bracket4 = salaryTax45Bracket5 - 82342;
+            netSalaryAfterTax = salaryTax41Bracket4 - (salary * 41 / 100);
+            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
+            taxe = salary - netSalaryAfterTax;
+            System.out.println("Le montant de votre impôt est de " + taxe + "€");
+
+        } else if (salary >= 28798) {
+            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
+            salaryTax30Bracket3 = salaryTax41Bracket4 - 28798;
+            netSalaryAfterTax = salaryTax30Bracket3 - (salary * 30 / 100);
+            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
+            taxe = salary - netSalaryAfterTax;
+            System.out.println("Le montant de votre impôt est de " + taxe + "€");
+
+        } else if (salary >= 11295) {
+            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
+            salaryTax11Bracket2 = salaryTax30Bracket3 - 11295;
+            salary = salary - 11295;
+            netSalaryAfterTax = salaryTax11Bracket2 - (salary * 11 / 100);
+            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
+            taxe = salary - netSalaryAfterTax;
+            System.out.println("Le montant de votre impôt est de " + taxe + "€");
+        }
+
+        else {
             System.out.println("Votre impôt s'élève à 0€");
         }
 
-        if (salary >= 11295) {
-            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
-            netSalaryAfterTax = salary - (salary * 11 / 100);
-            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
-            taxe = salary - netSalaryAfterTax;
-            System.out.println("Le montant de votre impôt est de " + taxe + "€");
-        }
 
-        if (salary >= 28798) {
-            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
-            netSalaryAfterTax = salary - (salary * 30 / 100);
-            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
-            taxe = salary - netSalaryAfterTax;
-            System.out.println("Le montant de votre impôt est de " + taxe + "€");
-        }
-
-        if (salary >= 82342) {
-            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
-            netSalaryAfterTax = salary - (salary * 41 / 100);
-            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
-            taxe = salary - netSalaryAfterTax;
-            System.out.println("Le montant de votre impôt est de " + taxe + "€");
-        }
-        if (salary > 177106) {
-            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
-            netSalaryAfterTax = salary - (salary * 45 / 100);
-            System.out.println("Le montant de votre salaire net après impôt est de " + netSalaryAfterTax + "€.");
-            taxe = salary - netSalaryAfterTax;
-            System.out.println("Le montant de votre impôt est de " + taxe + "€");
-        }
     }
 }
