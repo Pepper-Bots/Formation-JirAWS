@@ -28,7 +28,7 @@ public class FrenchRevenueTaxCalculator {
         // 53600
         // 97950
         // 195000
-        double salary = 97950;
+        double salary = 12590;
 
         double salaryTax45Bracket5 = 0;
         double salaryTax41Bracket4 = 0;
