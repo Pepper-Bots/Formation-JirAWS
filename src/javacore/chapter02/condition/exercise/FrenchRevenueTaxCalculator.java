@@ -28,7 +28,7 @@ public class FrenchRevenueTaxCalculator {
         // 53600
         // 97950
         // 195000
-        double salary = 12590;
+        double salary = 195000;
         System.out.println("Votre salaire net imposable est de : " + salary + "€.");
 
         // Tranche 5 :
@@ -51,8 +51,8 @@ public class FrenchRevenueTaxCalculator {
 
 
         if (salary > 177106) {
-            System.out.println("Votre salaire net imposable est de : " + salary + "€.");
 
+            System.out.println("Vos tranches d'imposition sont les tranches 5, 4, 3, 2 et 1.");
             // Tranche 5
             // Tranche 4
             // Tranche 3
@@ -63,6 +63,8 @@ public class FrenchRevenueTaxCalculator {
 
         } if (salary >= 82342 && salary <= 177106) {
 
+            System.out.println("Vos tranches d'imposition sont les tranches 4, 3, 2 et 1.");
+
             // Tranche 4
             // Tranche 3
             // Tranche 2
@@ -71,6 +73,8 @@ public class FrenchRevenueTaxCalculator {
             totalTax = tax4 + tax3 + tax2;
 
         } if (salary >= 28798 && salary <= 82341) {
+
+            System.out.println("Vos tranches d'imposition sont les tranches 3, 2 et 1.");
 
             // Tranche 3
             // Tranche 2
@@ -81,13 +85,16 @@ public class FrenchRevenueTaxCalculator {
 
         } if (salary >= 11295 && salary <= 28797) {
 
+            System.out.println("Vos tranches d'imposition sont les tranches 2 et 1.");
+
             // Tranche 2
 
           totalTax = tax2;
 
-        } else {
+        } if (salary <= 11294){
 
             // Tranche 1 -> - de 11.294€
+            System.out.println("Votre tranche d'imposition est la tranche 1");
             System.out.println("Vous n'êtes pas imposable");
         }
 
