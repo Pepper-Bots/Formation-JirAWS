@@ -4,29 +4,29 @@ public class ObfuscatedCodeV1 {
 
     public static void main(String[] args) {
 
-        int b = 1; // Type de véhicule (1 = XXX, 2 = YYY, 3 = ZZZ)
+        int typeVehicule = 1; // Type de véhicule (1 = voiture, 2 = moto, 3 = camion)
 
-        double a = 100; // Distance
+        double distance = 100; // Distance
 
-        boolean e = true;
+        boolean e = true; // condition à déterminer
         double d = 0.03;
 
-        double c = 0;
+        double prixCarburant = 0; // carburant ?
 
-        if (b == 1) {
-            c = a * 0.10;
+        if (typeVehicule == 1) {
+            prixCarburant = distance * 0.10;
         }
-        if (b == 2) {
-            c = a * 0.20;
+        if (typeVehicule == 2) {
+            prixCarburant = distance * 0.20;
         }
-        if (b == 3) {
-            c = a * 0.35;
+        if (typeVehicule == 3) {
+            prixCarburant = distance * 0.35;
         }
         if (e) {
-            c = c - (a * d);
+            prixCarburant = prixCarburant - (distance * d);
         }
 
-        System.out.println("___________ : " + c + "€");
+        System.out.println("Pour le " + typeVehicule + " le prix du carburant s'élève à : " + prixCarburant + "€");
 
     }
 }
