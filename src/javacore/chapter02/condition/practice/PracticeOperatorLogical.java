@@ -20,6 +20,8 @@ public class PracticeOperatorLogical {
         boolean trueAndTrueAndTrue  = true && true && true;  // true
         boolean trueAndTrueAndFalse = true && true && false; // false
 
+        boolean trueAndFalseAndTrue = true && false && true; // false
+
         boolean trueOrTrueOrTrue  = true || true || true;  // true
         boolean trueOrTrueOrFalse = true || true || false; // true
 
@@ -34,11 +36,18 @@ public class PracticeOperatorLogical {
 
         int seatsAvailable = 40; // Nb de places dispos dans l'avion
 
+        boolean isPremiumMember = true; // Est-ce que le vol est réservé aux VIP ?
 
-        if(isLoggedIn && age >= 18 && seatsAvailable > 0) {
+        boolean isVIPFlight = true; // Est-ce que le vol est réservé aux VIP ?
+
+
+        if(isLoggedIn && age >= 18 && seatsAvailable > 0 && (!isVIPFlight || isPremiumMember)) {
 
             System.out.println("Réservation effectuée avec succès !");
-            seatsAvailable--; //
+            seatsAvailable--; // seatsAvailable -= 1; seatsAvailable = seatsAvailable - 1;
+        }
+        else {
+            System.out.println("Réservation impossible, essayez plus tard.");
         }
 
     }
