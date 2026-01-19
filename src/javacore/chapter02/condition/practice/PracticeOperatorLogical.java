@@ -4,6 +4,17 @@ public class PracticeOperatorLogical {
 
     public static void main(String[] args) {
 
+        
+        // Le mode "sécurisé" s'active seulement si certaines conditions spécifiques sont remplies.
+        //Voici les critères que le programme doit vérifier :
+        //
+        //La maison est vide OU le propriétaire est endormi.
+        //
+        //Toutes les portes et fenêtres sont fermées.
+        //
+        //L'alarme principale est activée.
+
+
         boolean trueAndTrue   = true && true;   // true
         boolean trueAndFalse  = true && false;  // false
         boolean falseAndTrue  = false && true;  // false
