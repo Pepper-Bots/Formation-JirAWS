@@ -4,6 +4,7 @@ public class FrenchRevenueTaxCalculator {
 
     public static void main(String[] args) {
 
+        final double Bracket_Salary = 177106;
         // Rappel :
         // 3 types de salaires :
         // - Salaire brut
@@ -28,12 +29,13 @@ public class FrenchRevenueTaxCalculator {
         // 53600
         // 97950
         // 195000
-        double salary = 25000;
+        double salary = 200000;
         System.out.println("Votre salaire net imposable est de : " + salary + "€.");
 
-        double totalTax = 0;
+        double computeSalary = 200000;
+        float totalTax = 0F;
 
-        if (salary > 177106) {
+        if (salary > Bracket_Salary) {
 
             // Tranche 5 :
             double salaryTax45Bracket5 = salary - 177106;
@@ -89,7 +91,7 @@ public class FrenchRevenueTaxCalculator {
         }
 
         // Affichage résultat final :
-        double salaryNetAfterTax = salary - totalTax;
+        double salaryNetAfterTax = computeSalary - totalTax;
 
         System.out.println("Le montant de votre salaire net après impôt est de " + salaryNetAfterTax + "€.");
     }
