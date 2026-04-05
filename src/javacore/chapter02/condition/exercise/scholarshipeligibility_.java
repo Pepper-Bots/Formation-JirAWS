@@ -1,6 +1,6 @@
 package javacore.chapter02.condition.exercise;
 
-public class ScholarshipEligibility {
+public class scholarshipeligibility_ {
 
     public static void main (String[] args){
 

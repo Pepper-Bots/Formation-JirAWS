@@ -1,6 +1,6 @@
 package javacore.chapter02.condition.exercise;
 
-public class ConditionToTernary_ {
+public class ConditionToTernary {
 
     public static void main(String[] args) {
 
