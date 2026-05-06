@@ -8,21 +8,23 @@ public class SmallestDivisorFinder {
         // Valeurs à tester :
         // 50
         // 34
-        // 15
+        // 25
         // 9
         // 6
         // 5
-        int number = 2;
+        int number = 17;
         int divisor = 2;
 
         while (number % divisor != 0){
 
             System.out.println(divisor + " n'est pas un diviseur de " + number);
             divisor++;
-            break;
         }
 
-        System.out.println(divisor + " n'est pas un diviseur de " + number);
+        System.out.println(divisor + " est le plus petit diviseur de " + number);
 
+        if(number == divisor){
+            System.out.println("On peut dire que c'est un nombre premier !");
+        }
     }
 }

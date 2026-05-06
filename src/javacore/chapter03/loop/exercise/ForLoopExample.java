@@ -3,7 +3,7 @@ package javacore.chapter03.loop.exercise;
 import java.util.Arrays;
 import java.util.List;
 
-public class ForLoopExample_ {
+public class ForLoopExample {
 
     public static void main(String[] args){
 
@@ -19,8 +19,16 @@ public class ForLoopExample_ {
 
 //        // Affichez l'alphabet
         List<String> letter = Arrays.asList("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
-        for (int i = 0; i < letter.size(); i++ ){
+        for(int i = 0; i < letter.size(); i++ ){
             System.out.println(letter.get(i));
+        }
+
+        char test = 'A';
+
+        for(int alphaCounter = 1; alphaCounter <= 26; alphaCounter++){
+            System.out.println(test);
+            System.out.println((int) test);
+            test++;
         }
 
         // Calculez une factorielle : Utilisez une boucle for pour calculer et afficher le résultat d'une factorielle.
