@@ -1,6 +1,6 @@
 package javacore.chapter03.loop.exercise;
 
-public class HalfPyramid_ {
+public class HalfPyramid {
 
     public static void main(String[] args) {
 
