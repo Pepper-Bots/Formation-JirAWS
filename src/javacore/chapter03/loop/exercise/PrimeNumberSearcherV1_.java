@@ -1,6 +1,6 @@
 package javacore.chapter03.loop.exercise;
 
-public class PrimeNumberSearcherV1 {
+public class PrimeNumberSearcherV1_ {
 
     public static void main(String[] args){
 
@@ -36,35 +36,35 @@ public class PrimeNumberSearcherV1 {
 
         // Tableau de booléens :
         // true = nombre premier potentiel
-        boolean[] premier = new boolean[101];
-
-        // Initialisation : tous les nombres >= 2 sont supposés premiers
-        for (int i = 2; i <= 100; i++){
-            premier[i] = true;
-        }
-
-        // On élimine les multiples
-        for(int i = 2; i <= 100; i ++){
-
-            if (premier[i]){
-
-                // Supprime tous les multiples de i
-                for (int j = i * 2; j <= 100; j += i){
-                    premier[j] = false;
-                }
-            }
-        }
-
-        // Affichage nombres premiers
-        System.out.println("Nombres premiers entre 1 et 100 :");
-
-        for (int i = 2; i <= 100; i++){
-            if (premier[i]){
-                System.out.println(i + " ");
-            }
-        }
-//        int number = 15;
-//        int divisor = 2;
+//        boolean[] premier = new boolean[101];
+//
+//        // Initialisation : tous les nombres >= 2 sont supposés premiers
+//        for (int i = 2; i <= 100; i++){
+//            premier[i] = true;
+//        }
+//
+//        // On élimine les multiples
+//        for(int i = 2; i <= 100; i ++){
+//
+//            if (premier[i]){
+//
+//                // Supprime tous les multiples de i
+//                for (int j = i * 2; j <= 100; j += i){
+//                    premier[j] = false;
+//                }
+//            }
+//        }
+//
+//        // Affichage nombres premiers
+//        System.out.println("Nombres premiers entre 1 et 100 :");
+//
+//        for (int i = 2; i <= 100; i++){
+//            if (premier[i]){
+//                System.out.println(i + " ");
+//            }
+//        }
+////        int number = 15;
+////        int divisor = 2;
 //        int primeNumber;
 //
 //        while (number % divisor != 0){
@@ -86,5 +86,17 @@ public class PrimeNumberSearcherV1 {
 //
 //        int[] tableauNombres = {1, 2, 100};
 //
+        for (int number = 2; number <= 100; number++) {
+
+            int divisor = 2;
+
+            while (number % divisor != 0) {
+                divisor++;
+            }
+
+            if (divisor == number) {
+                System.out.println(number + " est premier");
+            }
+        }
     }
 }
