@@ -63,8 +63,8 @@ public class PrimeNumberSearcherV1_ {
 //                System.out.println(i + " ");
 //            }
 //        }
-////        int number = 15;
-////        int divisor = 2;
+//        int number = 15;
+//        int divisor = 2;
 //        int primeNumber;
 //
 //        while (number % divisor != 0){
