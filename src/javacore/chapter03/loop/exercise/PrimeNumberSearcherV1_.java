@@ -86,14 +86,21 @@ public class PrimeNumberSearcherV1_ {
 //
 //        int[] tableauNombres = {1, 2, 100};
 //
+         // pour un nb à 2, tant qu'il est en dessous ou egal à 100 on l'incrémente de 1
         for (int number = 2; number <= 100; number++) {
 
+            // on crée un diviseur à 2
             int divisor = 2;
 
+            // tant que nb modulo 2 est different de 0 on incremente le diviseur de 1
+            // nb = 2 et divisor = 2 -> modulo = 1
+            // => si le resultat == 0 -> number est divisible par le divisor
+            // et on sort de la boucle while et passe au if
             while (number % divisor != 0) {
                 divisor++;
             }
 
+            // si le diviseur et le nb sont les memes -> le nb est premier
             if (divisor == number) {
                 System.out.println(number + " est premier");
             }

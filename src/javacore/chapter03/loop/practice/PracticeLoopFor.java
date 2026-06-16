@@ -22,7 +22,7 @@ public class PracticeLoopFor {
 
         int result2 = 0;
 
-
+        // Pour un nb = 1 - tant que ce nb est inf ou égal au nb max - on incrémente nb de 1
         for (int cNumber = 1 ; cNumber <= maxNumber ; cNumber++) {
 
             System.out.println("Result = " + result2 + " + " + cNumber);
