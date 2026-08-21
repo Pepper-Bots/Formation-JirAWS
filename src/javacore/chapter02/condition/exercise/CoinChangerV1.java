@@ -5,7 +5,7 @@ public class CoinChangerV1 {
     public static void main(String[] args){
 
         // 18 - 52 - 76 - 160 - 384
-        int totalBill = 384 ;
+        int totalBill = 60 ;
         int amountPaid = 90;
 
         int change = totalBill - amountPaid;
@@ -14,7 +14,9 @@ public class CoinChangerV1 {
         // Ce que j'ai compris :
         // on a une facture (totalBill) que le client doit régler
          // on a un montant (amountPaid) que le client règle qui va être déduit du montant total de la facture
-         // Lorsqu'il paie, la machine lui rend en coupure de 50 - 20 - 10 - 2 - 1 € seulement
+         // Lorsqu'il paie, la machine lui rend en coupure de 50 - 20 - 10 - 2 - 1 € seulement.
+
+
 
         if ( amountPaid < totalBill){
             System.out.println("Il vous reste " + change + "€ à régler.");
