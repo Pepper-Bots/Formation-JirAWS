@@ -91,76 +91,70 @@ public class CoinChangerV3 {
 
 // -------------------
 
-// 18 - 52 - 76 - 160 - 384
-        int montantARegler = 20;
-        int montantPaye = 90;
+        // Données de test : 18 - 52 - 76 - 160 - 384
+        int montantFacture = 50;
+        int montantPaye = 52;
 
-        int resteAPayer = montantARegler - montantPaye;
-        int tropPercu = montantPaye - montantARegler;
+        int resteAPayer = montantFacture - montantPaye;
+        int tropPercu = montantPaye - montantFacture;
+
+        // Pour calcul du nombre de billets et pièces
+        int nb50 = 0;
+        int nb20 = 0;
+        int nb10 = 0;
+        int np2 = 0;
+        int np1 = 0;
 
         // Cas où le client n'a pas payé assez
-        while (montantPaye < montantARegler) {
-            System.out.println("Montant de la facture : " + montantARegler + "€");
-            System.out.println("Restant à payer : " + resteAPayer + "€");
-            break;
+        if (montantPaye < montantFacture) {
+            System.out.println("Votre facture s'élève à : " + montantFacture + "€.");
+            System.out.println("Vous avez payé " + montantPaye + "€.");
+            System.out.println("Il vous reste donc " + resteAPayer + "€ à régler.");
         }
 
-        // Cas où le client a payé trop
-         while (montantPaye > montantARegler) {
-            System.out.println("Montant de la facture : " + montantARegler + "€");
-            System.out.println("Trop perçu : " + tropPercu + "€");
+        // Cas où le client a payé le montant exact de la facture
+        else if (montantPaye == montantFacture){
+            System.out.println("Vous avez réglé la totalité de la facture de " + montantFacture);
         }
 
-        // Gestion du Cas où le client a payé trop => comment lui rendre ?
-        while (tropPercu > 50) {
-            int nb50 = tropPercu - 50;
-            System.out.println("Nb de billets de 50€ à rendre : " + nb50);
+        // Cas où le client a payé trop -> déterminer montant à rendre
+        else {
+            System.out.println("Pour un montant de facture de " + montantFacture + "€");
+            System.out.println("Vous avez réglé un trop perçu de " + montantPaye + "€.");
+            System.out.println("Nous devons donc vous rendre " + tropPercu + "€");
 
-            while (nb50 > 20) {
-                int nb20 = nb50 - 20;
-                System.out.println("Nb de billets de 20€ à rendre : " + nb20);
-
-                while (nb20 > 10) {
-                    int nb10 = nb20 - 10;
-                    System.out.println("Nb de billets de 20€ à rendre : " + nb10);
-
-                    while (nb10 > 2) {
-                        int nb2 = nb10 - 2;
-                        System.out.println("Nb de billets de 20€ à rendre : " + nb2);
-
-                    break;
-                    }
-
-
-//            int nb50 = rendu / 50;
-//            int reste = rendu % 50;
-//            System.out.println("Nb de billets de 50€ à rendre : " + nb50);
-//
-//            int nb20 = reste / 20;
-//            reste = reste % 20;
-//            System.out.println("Nb de billets de 20€ à rendre : " + nb20);
-//
-//            int nb10 = reste / 10;
-//            reste = reste % 10;
-//            System.out.println("Nb de billets de 10€ à rendre : " + nb10);
-//
-//            int nb2 = reste / 2;
-//            reste = reste % 2;
-//            System.out.println("Nb de pièces de 2€ à rendre : " + nb2);
-
-//            int nb1 = reste;
-//            System.out.println("Nb de pièces de 1€ à rendre : " + nb1);
-//
-//        }
-//
-//        else {
-//            System.out.println("Vous avez payé la totalité de votre facture");
-//
-//        }
-
-
-                }
+            // nb de billets de 50€ dans le montant à rendre
+            while(tropPercu >= 50){
+                tropPercu -= 50;
+                nb50 ++;
             }
+            System.out.println("Nb de billets de 50€ à rendre " + nb50);
+
+            while(tropPercu >= 20){
+                tropPercu -= 20;
+                nb20 ++;
+            }
+            System.out.println("Nb de billets de 20€ à rendre " + nb20);
+
+            while(tropPercu >= 10){
+                tropPercu -= 10;
+                nb10 ++;
+            }
+            System.out.println("Nb de billets de 10€ à rendre " + nb10);
+
+            while(tropPercu >= 2){
+                tropPercu -= 2;
+                np2 ++;
+            }
+            System.out.println("Nb de pièces de 2€ à rendre " + np2);
+
+            while(tropPercu >= 1){
+                tropPercu -= 1;
+                np1 ++;
+            }
+            System.out.println("Nb de pièces de 1€ à rendre " + np1);
         }
+
     }
-    }
+}
+

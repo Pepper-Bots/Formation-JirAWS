@@ -32,7 +32,7 @@ public class ForLoopExample {
         }
 
         // Calculez une factorielle : Utilisez une boucle for pour calculer et afficher le résultat d'une factorielle.
-        //Exemple d'affichage : La factorielle de 4 est 24
+        // Exemple d'affichage : La factorielle de 4 est 24
         // factorielle d'un entier naturel n est notée n! = produit des nb entiers strictement positifs inférieurs ou égaux à n
         // Factorielle de 5! = 5 * 4 * 3 * 2 * 1 = 120
         int n = 5;
